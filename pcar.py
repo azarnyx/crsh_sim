@@ -184,4 +184,4 @@ def plot_new(angle, toffset, datafile, severity):
 
 
 if __name__ == "__main__":
-    plot(angle = 180 + 10, toffset = 0.75, datafile = 'AudiTT.jpg')
+    plot(angle = 180 + 10, toffset = 0.75, datafile = 'img/AudiTT.jpg')
