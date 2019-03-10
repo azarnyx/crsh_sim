@@ -24,3 +24,7 @@ The first call returns data in JSON format. Example:
 {"impactAngle":154.98051407054078,"offsetMaximumForce":36143.61990907687}
 
 The second call returns image xxx.jpg which is visulization of how large are the damage of the car at the moment of time timeOffsetMS. The peak of damages correspond to the offsetMaximumForce. Damage starts 1 second before the offsetMaximumForce and continues half of the second after offsetMaximumForce. If timeOffsetMS<offsetMaximumForce-1s, then image of the car without damages will be returned. If timeOffsetMS>offsetMaximumForce-0.5s then image of maximum damage will be returned.
+
+Examples of damages visualizations:
+![Car number 1](img/image1.png)
+![Car number 2](img/image2.png)
