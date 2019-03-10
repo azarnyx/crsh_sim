@@ -1,7 +1,7 @@
 # CRSH SIMULATION
 
 This is the solution of the Team "StartGallen" of the challenge from
-[autoSense](htttp://autosense.ch) in
+[autoSense](http://autosense.ch) in
 [STARTHACK2019](http://starthack.ch) in St. Gallen.
 
 We implemented:
@@ -17,8 +17,8 @@ also provide Dockerfile for the easier deployment.
 
 API examples:
 
-    curl -H "Content-Type: application/json" -X POST -d @1.json  http://35.198.180.180:80/api/v1/getCrashInfo
-    curl -H "Content-Type: application/json" -X POST -d @1.json  http://35.198.180.180:80/api/v1/getCrashImage?timeOffsetMS=50000 --output xxx.png
+    curl -H "Content-Type: application/json" -X POST -d @test.json  http://35.198.180.180:80/api/v1/getCrashInfo
+    curl -H "Content-Type: application/json" -X POST -d @test.json  http://35.198.180.180:80/api/v1/getCrashImage?timeOffsetMS=50000 --output xxx.png
 
 
 here 1.json is the file in the format of the data provided initially,
