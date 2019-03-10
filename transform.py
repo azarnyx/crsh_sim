@@ -12,16 +12,19 @@ from scipy.signal import butter, lfilter, freqz
 from scipy.stats import linregress
 from scipy.interpolate import UnivariateSpline
 
-def find_nearest(array,value):
-    idx = np.searchsorted(array, value, side="left")
-    if idx > 0 and (idx == len(array) or math.fabs(value - array[idx-1]) < math.fabs(value - array[idx])):
+G = 9.81 # m/s^2
+X, Y, Z = 0, 1, 2
+
+def find_nearest(a, v):
+    idx = np.searchsorted(a, v, side="left")
+    if idx > 0 and (idx == len(a) or math.fabs(v - a[idx-1]) < math.fabs(v - a[idx])):
         return idx-1
     else:
         return idx
 
-def sortw(timestamps, elements):
-    timestamps, elements = zip(*sorted(zip(timestamps, elements)))
-    return elements
+def sortw(t, e):
+    t, e = zip(*sorted(zip(t, e)))
+    return e
 
 def npa(a): return np.array(a)
 
@@ -34,8 +37,6 @@ def trap(x, t):
     y = np.append(y, y[-1])
     return y
 
-G = 9.81 # m/(ms)^2
-X, Y, Z = 0, 1, 2
 def conv(u, v, w, ca):
     x = ca[X][X]*u + ca[X][Y]*v + ca[X][Z]*w
     y = ca[Y][X]*u + ca[Y][Y]*v + ca[Y][Z]*w
