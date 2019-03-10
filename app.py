@@ -23,7 +23,6 @@ def not_found(error):
 def not_found(error):
     return make_response(jsonify( { 'error': 'Not found' } ), 404)
 
-def msg(s): sys.stderr.write(str(s) + "\n")
 @application.route('/api/v1/getCrashInfo', methods = ['POST'])
 def get_data():
     req_json = request.get_json()
@@ -51,7 +50,6 @@ def create_image():
     
     while alpha <= 0:  alpha += 360
     while alpha > 360: alpha -= 360
-    msg(alpha)
     pcar.plot_new(angle = alpha, toffset = toffset,
                   datafile = 'img/AudiTT.jpg', severity = severity)
     return send_file("plot.jpg", mimetype="image/jpeg")

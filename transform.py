@@ -12,7 +12,6 @@ from scipy.signal import butter, lfilter, freqz
 from scipy.stats import linregress
 from scipy.interpolate import UnivariateSpline
 
-def msg(s): sys.stderr.write(str(s) + "\n")
 def find_nearest(array,value):
     idx = np.searchsorted(array, value, side="left")
     if idx > 0 and (idx == len(array) or math.fabs(value - array[idx-1]) < math.fabs(value - array[idx])):
@@ -86,7 +85,6 @@ def force(x, y):
     spl.set_smoothing_factor(0.75)
 
     r = roots(x, y)
-    msg(r)
     r = r[0]
     y = spl(x)
     l = find_nearest(x, r - big)
@@ -95,7 +93,6 @@ def force(x, y):
     l = find_nearest(x, r + sml)
     h = find_nearest(x, r + big)
     sB = linregress(x[l:h], y[l:h])[0]
-    msg("slopes: %g %G" % (sA, sB))
     return sB - sA, r - big, r + big
 
 def compute_parameters(file_json):
@@ -110,7 +107,4 @@ def compute_parameters(file_json):
     Fy, t_start, t_end = force(t, vy)
 
     alpha = np.arctan2(-Fy, Fx)*180/np.pi
-    msg("forces: %g %g" % (Fx, Fy))
-    msg("alpha: %g" % alpha)
-    msg(tmax_offset)
     return alpha, severity, tmax_offset, t_start, t_end
