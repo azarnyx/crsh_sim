@@ -1,7 +1,7 @@
 # CRSH SIMULATION
 
 This is the solution of the Team "StartGallen" of the challenge from
-[autoSense](htttp://autosense.ch) in
+[autoSense](http://autosense.ch) in
 [STARTHACK2019](http://starthack.ch) in St. Gallen.
 
 We implemented:
