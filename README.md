@@ -17,8 +17,8 @@ also provide Dockerfile for the easier deployment.
 
 API examples:
 
-    curl -H "Content-Type: application/json" -X POST -d @1.json  http://35.198.180.180:80/api/v1/getCrashInfo
-    curl -H "Content-Type: application/json" -X POST -d @1.json  http://35.198.180.180:80/api/v1/getCrashImage?timeOffsetMS=50000 --output xxx.jpg
+    curl -H "Content-Type: application/json" -X POST -d @test.json  http://35.198.180.180:80/api/v1/getCrashInfo
+    curl -H "Content-Type: application/json" -X POST -d @test.json  http://35.198.180.180:80/api/v1/getCrashImage?timeOffsetMS=50000 --output xxx.jpg
 
 
 here 1.json is the file in the format of the data provided initially,
