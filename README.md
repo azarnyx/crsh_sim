@@ -18,7 +18,7 @@ also provide Dockerfile for the easier deployment.
 API examples:
 
     curl -H "Content-Type: application/json" -X POST -d @test.json  http://35.198.180.180:80/api/v1/getCrashInfo
-    curl -H "Content-Type: application/json" -X POST -d @test.json  http://35.198.180.180:80/api/v1/getCrashImage?timeOffsetMS=50000 --output xxx.jpg
+    curl -H "Content-Type: application/json" -X POST -d @test.json  http://35.198.180.180:80/api/v1/getCrashImage?timeOffsetMS=50000 --output xxx.png
 
 
 here 1.json is the file in the format of the data provided initially,
@@ -28,7 +28,7 @@ time in data.
 The first call returns data in JSON format. Example:
 `{"impactAngle":154.98051407054078,"offsetMaximumForce":36143.61990907687}`
 
-The second call returns image `xxx.jpg` which is visualization of how
+The second call returns image `xxx.png` which is visualization of how
 large are the damage of the car at the moment of time
 `timeOffsetMS`. The peak of damages correspond to the
 `offsetMaximumForce`. Damage starts 1 second before the
