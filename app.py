@@ -46,7 +46,7 @@ def create_image():
         toffset = -10
     toffset = min( 0.5,  toffset)
     toffset = max(-1.0, toffset)
-    toffset = (toffset+1.)/1.5
+    # toffset = (toffset+1.)/1.5
     
     while alpha <= 0:  alpha += 360
     while alpha > 360: alpha -= 360
