@@ -53,7 +53,7 @@ def create_image():
     while alpha > 360: alpha -= 360
     msg(alpha)
     pcar.plot_new(angle = alpha, toffset = toffset,
-                  datafile = 'AudiTT.jpg', severity = severity)
+                  datafile = 'img/AudiTT.jpg', severity = severity)
     return send_file("plot.jpg", mimetype="image/jpeg")
 
 if __name__ == '__main__':
