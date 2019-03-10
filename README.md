@@ -1,6 +1,8 @@
 # CRSH SIMULATION
 
-The repo is the solution of the Team "StartGallen" of the challenge from autoSense in STARTHACK2019 Hackathon in St. Gallen.
+The repo is the solution of the Team "StartGallen" of the challenge
+from [autoSense](autosense.ch) in [STARTHACK2019](starthack.ch) in
+St. Gallen.
 
 We implemented:
 1. a calibration procedure for the coordinate transformation
