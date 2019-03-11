@@ -81,7 +81,7 @@ def roots(x, y):
 
 def force(x, y):
     sml = 0.1
-    big = 3.0
+    big = 1.0
     spl = UnivariateSpline(x, y, k = 4)
     spl.set_smoothing_factor(0.75)
 
