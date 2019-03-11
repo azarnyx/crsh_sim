@@ -1,5 +1,5 @@
-# : ${URL=http://0.0.0.0:8000}
-: ${URL=http://35.198.180.180:80}
+: ${URL=http://0.0.0.0:8000}
+# : ${URL=http://35.198.180.180:80}
 : ${DATA=$HOME/startgallen/data/raw}
 
 f () {
@@ -8,7 +8,7 @@ f () {
     output=$i.`printf '%+06d' $offset`.png
     input=$DATA/$i.json
     
-    curl -s -H "Content-Type: application/json" -X POST -d @$input  \
+    curl -H "Content-Type: application/json" -X POST -d @$input  \
 	 $URL/api/v1/getCrashImage?timeOffsetMS=$offset --output $output
 
     echo "$output" >&2
