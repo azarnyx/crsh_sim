@@ -81,7 +81,7 @@ def roots(x, y):
 
 def force(x, y):
     sml = 0.1
-    big = 3.0
+    big = 1.0
     spl = UnivariateSpline(x, y, k = 4)
     spl.set_smoothing_factor(0.75)
 
@@ -100,12 +100,10 @@ def compute_parameters(file_json):
     mu = 0.7
     t, vx, vy, ax, ay, severity = transform_func(file_json)
 
-    a = np.sqrt(ax**2+ay**2)
-    ni = np.argmax(a)
-    tmax_offset = t[ni]
-    
-    Fx, t_start, t_end = force(t, vx)
-    Fy, t_start, t_end = force(t, vy)
+    Fx, lx, hx = force(t, vx)
+    Fy, ly, hy = force(t, vy)
 
     alpha = np.arctan2(-Fy, Fx)*180/np.pi
-    return alpha, severity, tmax_offset, t_start, t_end
+    offset = (lx + hx + ly + hy)/4.0
+
+    return alpha, severity, offset, lx, hx
