@@ -73,15 +73,13 @@ def transform_func(d):
     return tt, vx, vy, ax, ay, severity
 
 def roots(x, y):
-    #slope, inter = linregress(x, y)[:2]
-    #y -= slope*x + inter
     spl = UnivariateSpline(x, y, k = 4)
     spl.set_smoothing_factor(1.0)
     return spl.derivative().roots()
 
 def force(x, y):
     sml = 0.1
-    big = 1.0
+    big = 3.0
     spl = UnivariateSpline(x, y, k = 4)
     spl.set_smoothing_factor(0.75)
 
