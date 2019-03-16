@@ -6,7 +6,6 @@ import imageio
 import math
 import sys
 from scipy.stats import skewnorm
-def msg(s): sys.stderr.write(str(s) + "\n")
 
 class M(object):
     def __init__(self, a):
@@ -65,7 +64,6 @@ def plot(angle, toffset, datafile):
         mycmap._lut[:,-1] = np.linspace(0, 0.8, N+4)
         return mycmap
 
-    msg("pcar.py: angle: %g" % angle)
     alpha = angle
     impact_sev_max=0.3
     impact_sev=impact_sev_max*np.exp(toffset)/np.exp(1)
@@ -152,7 +150,6 @@ def plot_new(angle, toffset, datafile, severity):
         mycmap._lut[:,-1] = np.linspace(0, 0.8, N+4)
         return mycmap
 
-    msg("pcar.py: angle: %g" % angle)
     alpha = angle
     impact_sev_max=np.sqrt((0.7+severity)/10.)*0.3
     impact_sev=impact_sev_max*np.exp(toffset)/np.exp(1)
